@@ -3,9 +3,8 @@ services:
     name: carwash-services-api
     env: node
     plan: free
-    root: services-api
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: cd services-api && npm install
+    startCommand: cd services-api && npm start
     envVars:
       - key: NODE_ENV
         value: production
