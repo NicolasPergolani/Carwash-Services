@@ -1,7 +1,7 @@
 // scripts/seedServices.js
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Service = require('../src/models/Service');
+const Service = require('../models/Service');
 
 const services = [
   {
