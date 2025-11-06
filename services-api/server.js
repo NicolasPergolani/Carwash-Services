@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 require('dotenv').config();
 const app = require('./app');
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
 const startServer = async () => {
   try {
@@ -12,7 +11,7 @@ const startServer = async () => {
       console.log(`Services API running on port ${PORT}`);
     });
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error('Error al iniciar el servidor:', error);
     process.exit(1);
   }
 };

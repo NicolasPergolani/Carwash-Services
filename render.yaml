@@ -2,18 +2,12 @@ services:
   - type: web
     name: carwash-services-api
     env: node
-    plan: free
-    root: services-api
-    buildCommand: rm -rf node_modules package-lock.json && npm install
+    buildCommand: npm install
     startCommand: npm start
+    plan: free
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
-      - key: MONGO_URI
-        sync: false
-      - key: JWT_SECRET
-        generateValue: true
       - key: GATEWAY_API_URL
-        sync: false
+        value: https://gateway-api-lztd.onrender.com
+    healthCheckPath: /
