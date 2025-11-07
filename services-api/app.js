@@ -48,8 +48,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // Health check endpoint for Render
 app.get('/', (req, res) => {
+  const mongoose = require('mongoose');
+  const dbStatus = mongoose.connection.readyState === 1 ? 'Database connected successfully' : 'Database connection failed';
+  
   res.status(200).json({
-    message: 'Services API is running successfully!',
+    message: 'Services API is running successfully',
+    database: dbStatus,
     timestamp: new Date().toISOString(),
     status: 'healthy'
   });
