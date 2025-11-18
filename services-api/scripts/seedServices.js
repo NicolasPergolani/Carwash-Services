@@ -48,7 +48,7 @@ async function seed() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    await Service.deleteMany({}); // Limpia servicios previos
+    await Service.deleteMany({});
     await Service.insertMany(services);
     console.log('Servicios insertados correctamente');
     process.exit(0);

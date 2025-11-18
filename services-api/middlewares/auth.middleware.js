@@ -1,4 +1,4 @@
-// Middleware para autenticación y roles en services-api
+// Middleware for authentication and roles in services-api
 const jwt = require('jsonwebtoken');
 
 function authenticateJWT(req, res, next) {
